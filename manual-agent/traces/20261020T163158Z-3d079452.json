@@ -1,0 +1,30 @@
+{
+  "goal": "Опиши стратегію Cache-Burst.",
+  "created_at": "2026-10-20T16:31:58.976009+00:00",
+  "stop_reason": "finish",
+  "steps": 2,
+  "llm_calls": 2,
+  "final_answer": "Інформація про стратегію Cache-Burst відсутня в системі.",
+  "trace": [
+    {
+      "step": 1,
+      "action": "lookup_caching_strategy",
+      "arguments": {
+        "strategy_name": "Cache-Burst"
+      },
+      "decision_summary": "Використовую lookup_caching_strategy для отримання інформації про стратегію Cache-Burst.",
+      "observation": "lookup_caching_strategy('Cache-Burst') -> NOT_FOUND",
+      "seconds": 26.88
+    },
+    {
+      "step": 2,
+      "action": "finish",
+      "arguments": {
+        "answer": "Інформація про стратегію Cache-Burst відсутня в системі."
+      },
+      "decision_summary": "Стратегія Cache-Burst не була знайдена під час пошуку, тому надано відповідь про відсутність інформації.",
+      "observation": "Goal finished: Інформація про стратегію Cache-Burst відсутня в системі.",
+      "seconds": 21.07
+    }
+  ]
+}

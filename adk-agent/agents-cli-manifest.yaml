@@ -1,0 +1,4 @@
+project_type: prototype
+runtime: python
+agent_directory: app
+entry_module: app.agent

@@ -1,0 +1,67 @@
+Usage: agents-cli run [OPTIONS] MESSAGE
+
+  Run the agent with a single prompt (non-interactive).
+
+  MESSAGE is the prompt to send to the agent.
+
+  Run from your project directory to query the agent locally. A plain run
+  starts a one-off server and shuts it down when it finishes; pass
+  --start-server to keep the server running in the background instead.
+  Once a server is running, later plain runs reuse it (and leave it
+  running), so repeated requests are faster. Stop a persistent server with
+  --stop-server. After 30 minutes idle, the next request restarts it.
+
+  Use --url to query a deployed agent instead. Requires
+  --mode to choose the protocol:
+
+    a2a       A2A protocol
+    adk       ADK SSE (/run_sse, or :streamQuery for Agent Runtime in Gemini platform)
+    adk_live  ADK bidi WebSocket (/run_live), for Live and voice agents
+
+  Local runs default to adk. Use --mode adk_live to talk to a Live (Voice)
+  agent, locally or against any deployment target:
+
+    agents-cli run "What's the weather?" --mode adk_live
+    agents-cli run "..." --mode adk_live --url https://my-live-agent.run.app --app-name app
+
+  Supports --file for multimodal input and --session-id for
+  conversation continuity. A local session lives in the running server's
+  memory, so keep the server alive with --start-server to resume it
+  across separate runs.
+
+  Binary artifacts (images, audio, files) returned by the agent are
+  saved under '.google-agents-cli/artifacts/' in the project root and
+  listed in an 'Artifacts:' footer at the end of the response.
+  File references returned by URI are not downloaded.
+
+Options:
+  --url TEXT                 URL of a remote agent to query. If specified, no
+                             local server is started.
+  --mode [a2a|adk|adk_live]  Protocol used to talk to the agent: 'a2a', 'adk'
+                             (SSE), or 'adk_live' (bidi WebSocket). Required
+                             with --url; local runs default to 'adk'.
+  --app-name TEXT            Agent name for remote ADK SSE / A2A endpoints.
+                             Defaults to the local project's agent_directory;
+                             specify to query a different agent or to run from
+                             outside a project.
+  -f, --file PATH            Attach a file (image, PDF, audio, video).
+                             Repeatable.
+  --session-id TEXT          Resume an existing session. A local session lives
+                             in the running server's memory — keep the server
+                             alive with --start-server to resume it across
+                             runs.
+  -H, --header TEXT          Custom HTTP header (format: 'Key: Value').
+                             Repeatable. Overrides auto-detected auth.
+  --start-server             Keep the local server running after execution.
+                             The server persists until stopped with --stop-
+                             server, giving subsequent run requests less
+                             overhead and keeping in-memory sessions alive
+                             between runs.
+  --stop-server              Stop the local background server and exit.
+  --otel-to-cloud            Export OpenTelemetry traces/logs to Google Cloud.
+                             Takes effect when the local server starts;
+                             ignored with --url.
+  -v, --verbose              Print full JSON event payloads.
+  --help                     Show this message and exit.
+
+Source: C:\Users\MykytaTitarenko\AppData\Roaming\Python\Python314\site-packages\google\agents\cli\run\cmd_run.py

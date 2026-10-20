@@ -1,0 +1,28 @@
+{
+  "goal": "У мене мікросервісна архітекутра. Які типи кешування мені потрібні?",
+  "created_at": "2026-10-18T16:28:31.195223+00:00",
+  "steps": [
+    {
+      "step": 1,
+      "observation": "Goal: У мене мікросервісна архітекутра. Які типи кешування мені потрібні?\nEnvironment: Available caching strategies: Cache-Aside, Read-Through, Write-Through, Write-Behind, Write-Around, Refresh-Ahead.\nStep: 2 of 6\nRecent observations:\n- No observations yet.",
+      "decision": {
+        "action": "lookup_caching_strategy",
+        "arguments": {
+          "strategy_name": "Cache-Aside"
+        },
+        "decision_summary": "Перевіряю опис стратегії Cache-Aside як базової для мікросервісної архітектури."
+      },
+      "outcome": "lookup_caching_strategy result:\n{\n  \"identifier\": \"cache_aside\",\n  \"title\": \"Cache-Aside\",\n  \"description\": \"Application code reads from cache first and loads data from the primary store on a cache miss.\",\n  \"read_path\": \"Cache miss triggers a database read followed by populating the cache.\",\n  \"write_path\": \"Writes go to the primary store; cached entries are updated or invalidated separately.\",\n  \"strengths\": \"Simple to adopt and efficient for skewed read-heavy workloads.\",\n  \"tradeoffs\": \"Can serve stale data and pushes cache consistency logic into the application.\"\n}"
+    },
+    {
+      "step": 2,
+      "observation": "Goal: У мене мікросервісна архітекутра. Які типи кешування мені потрібні?\nEnvironment: Available caching strategies: Cache-Aside, Read-Through, Write-Through, Write-Behind, Write-Around, Refresh-Ahead.\nStep: 3 of 6\nRecent observations:\n- lookup_caching_strategy result:\n{\n  \"identifier\": \"cache_aside\",\n  \"title\": \"Cache-Aside\",\n  \"description\": \"Application code reads from cache first and loads data from the primary store on a cache miss.\",\n  \"read_path\": \"Cache miss triggers a database read followed by populating the cache.\",\n  \"write_path\": \"Writes go to the primary store; cached entries are updated or invalidated separately.\",\n  \"strengths\": \"Simple to adopt and efficient for skewed read-heavy workloads.\",\n  \"tradeoffs\": \"Can serve stale data and pushes cache consistency logic into the application.\"\n}",
+      "decision": {
+        "action": "finish",
+        "arguments": {},
+        "decision_summary": "Для мікросервісної архітектури зазвичай потрібні такі рівні та патерни кешування:\n1. **Патерни кешування даних**:\n   - **Cache-Aside (Lazy Loading)** — основний вибір для мікросервісів. Сервіс спочатку перевіряє кеш, а в разі промаху вичитує дані з власної бази даних і записує їх у кеш. Це забезпечує ізоляцію даних сервісу та гнучкість.\n   - **Write-Around** або **Write-Through** — для операцій запису, щоб уникнути перевантаження кешу рідковживаними даними або для гарантування актуальності.\n2. **Архітектурні рівні кешування**:\n   - **Розподілений кеш (Distributed Cache, наприклад, Redis/Keydb)**: спільний для всіх інстансів конкретного мікросервісу (зберігає стан сесій, агреговані вибірки).\n   - **Локальний кеш у пам'яті (In-Memory)**: для статичних конфігурацій чи довідників окремого інстансу з коротким TTL.\n   - **Edge/Gateway Cache (HTTP/CDN/API Gateway)**: для кешування загальних idempotent GET-запитів на вході в систему."
+      },
+      "outcome": "Goal finished: Для мікросервісної архітектури зазвичай потрібні такі рівні та патерни кешування:\n1. **Патерни кешування даних**:\n   - **Cache-Aside (Lazy Loading)** — основний вибір для мікросервісів. Сервіс спочатку перевіряє кеш, а в разі промаху вичитує дані з власної бази даних і записує їх у кеш. Це забезпечує ізоляцію даних сервісу та гнучкість.\n   - **Write-Around** або **Write-Through** — для операцій запису, щоб уникнути перевантаження кешу рідковживаними даними або для гарантування актуальності.\n2. **Архітектурні рівні кешування**:\n   - **Розподілений кеш (Distributed Cache, наприклад, Redis/Keydb)**: спільний для всіх інстансів конкретного мікросервісу (зберігає стан сесій, агреговані вибірки).\n   - **Локальний кеш у пам'яті (In-Memory)**: для статичних конфігурацій чи довідників окремого інстансу з коротким TTL.\n   - **Edge/Gateway Cache (HTTP/CDN/API Gateway)**: для кешування загальних idempotent GET-запитів на вході в систему."
+    }
+  ]
+}
