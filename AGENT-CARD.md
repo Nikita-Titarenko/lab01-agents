@@ -30,7 +30,7 @@
 | Реалізація | Фреймворк | Модель | Статус (працює / частково / ні) |
 | Власний цикл | — | gemini-3.1-flash-lite | працює |
 | ADK-агент | Google ADK >= 2.0.0 | gemini-3.1-flash-lite | працює |
-| Локальна модель (просунуто) | Google ADK + Ollama (OpenAI-compatible API) | llama3.2:3b | працює |
+| Локальна модель (просунуто) | Google ADK + Ollama (OpenAI-compatible API) | llama3.2:1b | працює |
 
 ## 5. Запуск
 - Власний агент: uv run python main.py "<запит>"
