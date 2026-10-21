@@ -1,12 +1,19 @@
 from __future__ import annotations
 
 import os
+from typing import Any
 
 from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+MODEL_BACKEND = os.getenv("MODEL_BACKEND", "gemini").strip().lower()
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", os.getenv("OLLAMA_MODEL", "llama3.1:8b"))
+OPENAI_BASE_URL = os.getenv(
+    "OPENAI_BASE_URL", os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434/v1")
+)
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", os.getenv("OLLAMA_API_KEY", "ollama"))
 
 INSTRUCTION = """
 ROLE: Educational AI agent for caching strategies in distributed systems.
@@ -31,12 +38,30 @@ try:
 
     from app.environment import get_implementations, lookup_caching_strategy
 
+    def _build_model() -> Any:
+        if MODEL_BACKEND == "gemini":
+            return Gemini(
+                model=GEMINI_MODEL,
+                retry_options=types.HttpRetryOptions(attempts=3),
+            )
+
+        if MODEL_BACKEND in {"openai", "openai_compatible", "ollama"}:
+            # Ollama exposes an OpenAI-compatible endpoint at /v1.
+            from google.adk.integrations.openai import OpenAILlm
+
+            return OpenAILlm(
+                model=OPENAI_MODEL,
+                base_url=OPENAI_BASE_URL,
+                api_key=OPENAI_API_KEY,
+            )
+
+        raise ValueError(
+            "Unsupported MODEL_BACKEND. Use one of: gemini, openai_compatible, ollama"
+        )
+
     root_agent = Agent(
         name="root_agent",
-        model=Gemini(
-            model=MODEL,
-            retry_options=types.HttpRetryOptions(attempts=3),
-        ),
+        model=_build_model(),
         instruction=INSTRUCTION,
         tools=[lookup_caching_strategy, get_implementations],
     )

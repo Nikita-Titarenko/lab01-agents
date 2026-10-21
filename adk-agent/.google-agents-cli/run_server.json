@@ -1,8 +1,0 @@
-{
-  "pid": 85095,
-  "port": 18081,
-  "started_at": "2026-10-20T18:06:23.608050+00:00",
-  "last_activity": "2026-10-20T18:10:05.713587+00:00",
-  "otel_to_cloud": false,
-  "use_in_memory_session": true
-}

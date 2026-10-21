@@ -9,9 +9,18 @@ pytest.importorskip(
 )
 
 
+def _has_backend_credentials() -> bool:
+    backend = os.getenv("MODEL_BACKEND", "gemini").strip().lower()
+    if backend == "gemini":
+        return bool(os.getenv("GEMINI_API_KEY"))
+    if backend in {"ollama", "openai_compatible", "openai"}:
+        return bool(os.getenv("OPENAI_BASE_URL") and os.getenv("OPENAI_MODEL"))
+    return False
+
+
 @pytest.mark.skipif(
-    not os.getenv("GEMINI_API_KEY"),
-    reason="GEMINI_API_KEY is required for live ADK integration checks",
+    not _has_backend_credentials(),
+    reason="Model backend credentials are required for live ADK integration checks",
 )
 def test_adk_app_is_configured() -> None:
     assert app is not None

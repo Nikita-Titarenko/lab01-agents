@@ -6,7 +6,7 @@
 - Дата: 20.10.2026
 - Автор: Тітаренко Микита Сергійович, група ПЗПІ-23-1, e-mail mykyta.titarenko@nure.ua
 - Ліцензія: MIT
-- Посилання на архів: <посилання на Google Диску>
+- Посилання на архів: [<посилання на Google Диску>](https://drive.google.com/file/d/1I3XEvGTavKYXh6X3bXgMlm6_QLgc9blj/view?usp=sharing)
 
 ## 2. Призначення
 - Предметна область: стратегії кешування в розподілених системах
@@ -30,7 +30,7 @@
 | Реалізація | Фреймворк | Модель | Статус (працює / частково / ні) |
 | Власний цикл | — | gemini-3.1-flash-lite | працює |
 | ADK-агент | Google ADK >= 2.0.0 | gemini-3.1-flash-lite | працює |
-| Локальна модель (просунуто) | Google ADK + локальний inference backend | <не налаштовано> | ні |
+| Локальна модель (просунуто) | Google ADK + Ollama (OpenAI-compatible API) | llama3.2:3b | працює |
 
 ## 5. Запуск
 - Власний агент: uv run python main.py "<запит>"

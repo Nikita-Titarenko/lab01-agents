@@ -3082,3 +3082,115 @@ INFO:     127.0.0.1:40870 - "POST /run_sse HTTP/1.1" 200 OK
   declaration = tool._get_declaration()
 INFO:     127.0.0.1:52622 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
 INFO:     127.0.0.1:52624 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85098]
+=== Starting server at 2026-10-20T19:16:38.096250+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /home/mykytatitarenko/lab01-agents/adk-agent
+=== Started server process 102528 ===
+   Building adk-agent @ file:///home/mykytatitarenko/lab01-agents/adk-agent
+      Built adk-agent @ file:///home/mykytatitarenko/lab01-agents/adk-agent
+Uninstalled 1 package in 1ms
+Installed 1 package in 1ms
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/cli/fast_api.py:304: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [102548]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51144 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51160 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51168 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51184 - "POST /run_sse HTTP/1.1" 200 OK
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+INFO:     127.0.0.1:50540 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50544 - "POST /run_sse HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for connections to close. (CTRL+C to force quit)
+INFO:     Waiting for background tasks to complete. (CTRL+C to force quit)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [102548]
+=== Starting server at 2026-10-20T19:30:23.692911+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /home/mykytatitarenko/lab01-agents/adk-agent
+=== Started server process 106457 ===
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/cli/fast_api.py:304: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [106460]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47154 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:47162 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47164 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47166 - "POST /run_sse HTTP/1.1" 200 OK
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [106460]
+=== Starting server at 2026-10-20T19:41:20.226502+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18081
+CWD: /home/mykytatitarenko/lab01-agents/adk-agent
+=== Started server process 109297 ===
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/cli/fast_api.py:304: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [109300]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18081 (Press CTRL+C to quit)
+=== Starting server at 2026-10-20T19:41:46.321417+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18083
+CWD: /home/mykytatitarenko/lab01-agents/adk-agent
+=== Started server process 109420 ===
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/cli/fast_api.py:304: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [109423]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18083 (Press CTRL+C to quit)
+INFO:     127.0.0.1:33512 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33518 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33524 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33536 - "POST /run_sse HTTP/1.1" 200 OK
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [109423]
+=== Starting server at 2026-10-20T19:45:30.798342+00:00 ===
+Command: uv run uvicorn app.fast_api_app:app --host 127.0.0.1 --port 18083
+CWD: /home/mykytatitarenko/lab01-agents/adk-agent
+=== Started server process 110310 ===
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/cli/fast_api.py:304: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/auth/credential_service/in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [110313]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:18083 (Press CTRL+C to quit)
+INFO:     127.0.0.1:57034 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57048 - "GET /dev-ui/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57062 - "POST /apps/app/users/cli-user/sessions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57066 - "POST /run_sse HTTP/1.1" 200 OK
+/home/mykytatitarenko/lab01-agents/adk-agent/.venv/lib/python3.12/site-packages/google/adk/models/llm_request.py:306: UserWarning: [EXPERIMENTAL] feature FeatureName.JSON_SCHEMA_FOR_FUNC_DECL is enabled.
+  declaration = tool._get_declaration()
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [110313]
