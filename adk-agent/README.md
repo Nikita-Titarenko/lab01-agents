@@ -59,3 +59,7 @@ The ADK execution wrapper prints the answer to stdout and logs the total elapsed
 ## Current offline status
 
 This repository currently includes a manual scaffold because `agents-cli` is not installed in the working shell. The project files are prepared to match the methodology structure, but live ADK execution still requires local installation of ADK tooling.
+
+## Report
+
+- [ЛР_№1_ПЗПІ-23-1_Тітаренко_М_С.pdf](../ЛР_№1_ПЗПІ-23-1_Тітаренко_М_С.pdf)

@@ -20,3 +20,7 @@ uv run python main.py "Опиши стратегію Cache-Aside." --mode onesho
 ```bash
 uv run pytest
 ```
+
+## Report
+
+- [ЛР_№1_ПЗПІ-23-1_Тітаренко_М_С.pdf](../ЛР_№1_ПЗПІ-23-1_Тітаренко_М_С.pdf)
